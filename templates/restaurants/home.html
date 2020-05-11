@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %} Nearby restaurants {% endblock %}
+
+{% block content %}
+
+    <h1>Nearby Restaurants <span class="badge badge-secondary">A table !</span></h1>
+    {% if restaurants %}
+    <ul>
+        {% for restaurant in restaurants %}
+        <li>
+            {{ restaurant.name }} : {{restaurant.distance}}
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {# Container for the LeafletJS map #}
+    <div id="mapid"></div>
+
+{% endblock content %}
+
